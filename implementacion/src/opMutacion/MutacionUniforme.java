@@ -10,11 +10,11 @@ public class MutacionUniforme implements MutationOp<Integer> {
 
     private double probMutation;
 
-	/**
-	 * Construye un operador de mutación uniforme con una probabilidad de mutación
-	 * indicada
-	 * @param probMut La probabilidad de mutación
-	 **/
+    /**
+     * Construye un operador de mutación uniforme con una probabilidad de mutación
+     * indicada
+     * @param probMut La probabilidad de mutación
+     **/
     public MutacionUniforme(double probMut) {
         this.probMutation = probMut;
     }
