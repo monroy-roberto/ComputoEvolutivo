@@ -1,20 +1,26 @@
-import gaframework.*;
+import gaframework.Genotype;
+import gaframework.MutationOp;
 import java.util.Random;
 
 /**
- * Implemenatcion del operado de mutación uniforme para 
- * maximizar una función
+ * Implementación del operador de mutación uniforme para 
+ * maximizar una función, 
  **/
 public class MutacionUniforme implements MutationOp<Integer> {
 
     private double probMutation;
 
+	/**
+	 * Construye un operador de mutación uniforme con una probabilidad de mutación
+	 * indicada
+	 * @param probMut La probabilidad de mutación
+	 **/
     public MutacionUniforme(double probMut) {
         this.probMutation = probMut;
     }
 
     /**
-     * Muta el genotipo dado utilizando el método de mutación uniforme utilizando
+     * Muta el genotipo dado utilizando el método de mutación uniforme, con
      * una probabilidad de mutación descrita en el constructor
      * @param genotyoe El genotipo a mutar
      * @return El genotipo mutado
@@ -39,7 +45,7 @@ public class MutacionUniforme implements MutationOp<Integer> {
     }
     
     /**
-     * Función auxiliar que cambian el valor de un gen 
+     * Función auxiliar que cambia el valor de un gen 
      * @param gen El gen a mutar
      * @return El gen mutado
      **/
