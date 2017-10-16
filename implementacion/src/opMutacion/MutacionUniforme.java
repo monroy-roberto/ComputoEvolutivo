@@ -55,4 +55,32 @@ public class MutacionUniforme implements MutationOp<Integer> {
         else
             return new Integer(0);
     }
+    
+    /**
+     * Funcion pequena para probar el operador de mutacion.
+     * Muta el genotipo {0,1,0,1,0,1,0,1,0,1} dada una mutacion en formato de 
+     * punto decimal, si no se indica probabilidad de mutacion se toma la probabilidad
+     * 0.10
+     * Utilizando la semilla long seed = 25693; con probMutacion de 0.25 se obtuvo el
+     * resultado {0,1,1,1,0,1,0,1,1,0}
+     */
+    public static void main(String[] args){
+        double probMut = 0.10;
+        if (args.length != 0 && args[0] != null)
+            probMut = Double.parseDouble(args[0]);
+        Genotype<Integer> test = new Genotype<>(10);
+        MutacionUniforme mutator = new MutacionUniforme(probMut);
+        Integer j;
+        for (int i = 0; i < test.size(); i++) {
+            if (i % 2 == 0)
+                j = new Integer(0);
+            else
+                j = new Integer(1);
+            test.setGene(i,j);
+        }
+        int repetitions = 0;
+        System.out.println("Genotipo sin mutar:" + '\n' + test.toString());
+        test = mutator.mutate(test);
+        System.out.println("Genotipo Mutado" + '\n' + test.toString());
+    }
 }
